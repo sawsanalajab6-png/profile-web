@@ -3,145 +3,95 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سوسن — Front-End Developer</title>
-<style>
-:root {
-  --bg: #071025;
-  --muted: #9aa4b2;
-  --accent: #6ee7b7;
-  --hover: #34d399;
-  --transition: 0.3s;
-  font-family: "Inter", system-ui, sans-serif;
-}
-* { box-sizing: border-box; margin:0; padding:0; }
-body {
-  background: linear-gradient(180deg,#041124 0%,#071025 60%);
-  color: #e6eef8;
-  line-height: 1.6;
-  min-height: 100vh;
-}
-header {
-  position: sticky;
-  top:0;
-  z-index: 50;
-  backdrop-filter: blur(6px);
-  background: rgba(255,255,255,0.02);
-  border-bottom:1px solid rgba(255,255,255,0.05);
-}
-header .container { display:flex; justify-content:space-between; align-items:center; padding:20px 28px; flex-wrap:wrap; }
-.logo { width:50px;height:50px;background:linear-gradient(135deg,var(--accent),#34d399);display:flex;align-items:center;justify-content:center;border-radius:12px;font-weight:800;color:#042024;font-size:24px; }
-nav a { margin:0 10px; color: var(--muted); text-decoration:none; transition: var(--transition);}
-nav a:hover { color: var(--accent); }
-nav .cta { padding:6px 12px; border-radius:8px; background:rgba(255,255,255,0.05); }
-.lang-btn { background:transparent;color:var(--accent);border:1px solid var(--accent);border-radius:8px;padding:6px 12px; cursor:pointer; font-weight:600; transition: var(--transition);}
-.lang-btn:hover { background:var(--accent); color:#042024; }
-.hero { display:flex; justify-content:center; align-items:center; padding:60px 28px; text-align:center; }
-.hero h2 { font-size:32px; margin-bottom:12px; }
-.hero p { color: var(--muted); font-size:18px; margin-bottom:16px; }
-.hero .btn { display:inline-block; margin:6px 4px; padding:10px 16px; border-radius:10px; text-decoration:none; font-weight:600; background:linear-gradient(90deg,#0ea5a4 0%,#34d399 100%); color:#042024; transition: var(--transition);}
-.hero .btn:hover { transform: scale(1.05); }
-.section { padding:60px 28px; }
-.section.alt { background: rgba(255,255,255,0.02); }
-h3 { text-align:center; margin-bottom:24px; font-size:26px; }
-.skills-list { display:flex; justify-content:center; flex-wrap:wrap; gap:16px; list-style:none; margin-top:16px; }
-.skills-list li { padding:12px 20px; border:1px solid rgba(255,255,255,0.1); border-radius:12px; transition: var(--transition); cursor:default; }
-.skills-list li:hover { border-color: var(--accent); background: rgba(110,231,183,0.1); }
-.projects-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:20px; }
-.proj { background: rgba(255,255,255,0.03); padding:24px; border-radius:12px; text-align:center; transition: var(--transition); }
-.proj:hover { transform: translateY(-5px); background: rgba(110,231,183,0.1); }
-.proj .link { color: var(--accent); text-decoration:none; font-weight:600; }
-.form { max-width:500px; margin:auto; display:flex; flex-direction:column; gap:14px; }
-.form input, .form textarea { padding:12px; border-radius:8px; border:1px solid rgba(255,255,255,0.1); background:transparent; color:inherit; transition: var(--transition);}
-.form input:focus, .form textarea:focus { outline:none; border-color: var(--accent); box-shadow:0 0 8px rgba(110,231,183,0.3);}
-.form button { padding:12px; border:none; border-radius:8px; background:linear-gradient(90deg,#0ea5a4 0%,#34d399 100%); color:#042024; font-weight:600; cursor:pointer; transition: var(--transition);}
-.form button:hover { transform: scale(1.05); }
-footer { text-align:center; color:var(--muted); padding:20px 0; border-top:1px solid rgba(255,255,255,0.05); }
-@media(max-width:768px){ .hero h2{font-size:26px;} .hero p{font-size:16px;} header .container{flex-direction:column;gap:12px;} }
-</style>
+<title>المهندسة سوسن أحمد العجب — Front-End Developer</title>
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- ملف CSS خارجي -->
+<link rel="stylesheet" href="style.css">
+
 </head>
-<body>
-<header>
-  <div class="container">
-    <div class="logo">س</div>
-    <nav>
-      <a href="#about" data-lang="nav_about">نبذة</a>
-      <a href="#skills" data-lang="nav_skills">مهارات</a>
-      <a href="#projects" data-lang="nav_projects">مشاريع</a>
-      <a href="#contact" class="cta" data-lang="nav_contact">تواصل</a>
-      <button id="langBtn" class="lang-btn">EN</button>
+<body class="bg-gradient-to-b from-[#041124] to-[#071025] text-[#e6eef8]">
+
+<header class="sticky top-0 z-50 backdrop-blur-md border-b border-white/5">
+  <div class="container flex justify-between items-center p-5 flex-wrap">
+    <div class="flex items-center gap-4">
+      <div class="logo w-16 h-16 flex items-center justify-center rounded-lg font-bold text-2xl bg-gradient-to-br from-teal-500 to-green-400">س</div>
+      <div class="full-name font-semibold text-lg" data-lang="name">المهندسة سوسن أحمد العجب</div>
+    </div>
+    <nav class="flex items-center gap-4">
+      <a href="#about" data-lang="nav_about" class="hover:text-teal-400 transition">نبذة</a>
+      <a href="#skills" data-lang="nav_skills" class="hover:text-teal-400 transition">مهارات</a>
+      <a href="#projects" data-lang="nav_projects" class="hover:text-teal-400 transition">مشاريع</a>
+      <a href="#contact" class="cta px-3 py-1 rounded-md bg-white/5 hover:bg-teal-500 transition" data-lang="nav_contact">تواصل</a>
+      <button id="langBtn" class="lang-btn border border-teal-400 px-3 py-1 rounded-md hover:bg-teal-400 hover:text-black transition">EN</button>
     </nav>
   </div>
 </header>
 
-<section class="hero">
-  <div>
-    <h2 data-lang="hero_heading">أبني واجهات نظيفة وسريعة وتجربة استخدام بسيطة.</h2>
-    <p data-lang="hero_text">متخصصة في HTML, CSS, JavaScript — أُبدع في تصميم صفحات هبوط وتطبيقات واجهة أمامية متجاوبة ومصمَّمة بعناية.</p>
-    <a href="#projects" class="btn" data-lang="see_projects">اطلع على مشاريعي</a>
-    <a href="#contact" class="btn" data-lang="contact_me">أرسل رسالة</a>
-  </div>
+<section class="hero text-center py-20 px-5">
+  <h2 class="text-4xl mb-4" data-lang="hero_heading">أبني واجهات نظيفة وسريعة وتجربة استخدام بسيطة.</h2>
+  <p class="text-teal-200 mb-6" data-lang="hero_text">متخصصة في HTML, CSS, JavaScript — أُبدع في تصميم صفحات هبوط وتطبيقات واجهة أمامية متجاوبة ومصمَّمة بعناية.</p>
+  <a href="#projects" class="btn btn-primary m-2" data-lang="see_projects">اطلع على مشاريعي</a>
+  <a href="#contact" class="btn btn-outline-light m-2" data-lang="contact_me">أرسل رسالة</a>
 </section>
 
-<section id="about" class="section">
-  <h3 data-lang="about_heading">نبذة عني</h3>
-  <p style="text-align:center;" data-lang="about_text">طالبة تكنولوجيا معلومات ومطوّرة واجهة أمامية شغوفة ببناء واجهات مستخدم جذابة وفعّالة.</p>
+<section id="about" class="section py-20 px-5">
+  <h3 class="text-3xl mb-6 text-center" data-lang="about_heading">نبذة عني</h3>
+  <p class="text-center max-w-2xl mx-auto" data-lang="about_text">طالبة تكنولوجيا معلومات ومطوّرة واجهة أمامية شغوفة ببناء واجهات مستخدم جذابة وفعّالة.</p>
 </section>
 
-<section id="skills" class="section alt">
-  <h3 data-lang="skills_heading">مهاراتي التقنية</h3>
-  <ul class="skills-list">
-    <li data-lang="skill1">HTML و CSS</li>
-    <li data-lang="skill2">JavaScript</li>
-    <li data-lang="skill3">Bootstrap و GitHub</li>
+<section id="skills" class="section alt py-20 px-5 bg-white/5">
+  <h3 class="text-3xl mb-6 text-center" data-lang="skills_heading">مهاراتي التقنية</h3>
+  <ul class="skills-list flex justify-center flex-wrap gap-5 list-none mt-5">
+    <li data-lang="skill1" class="px-5 py-3 border border-white/10 rounded-lg">HTML و CSS</li>
+    <li data-lang="skill2" class="px-5 py-3 border border-white/10 rounded-lg">JavaScript</li>
+    <li data-lang="skill3" class="px-5 py-3 border border-white/10 rounded-lg">Bootstrap و GitHub</li>
   </ul>
 </section>
 
-<section id="projects" class="section">
-  <h3 data-lang="projects_heading">مشاريعي</h3>
-  <div class="projects-grid">
-    <div class="proj"><h4>Kora Website</h4><a href="#" class="link" data-lang="view_project">عرض المشروع</a></div>
-    <div class="proj"><h4>Online Store</h4><a href="#" class="link" data-lang="view_project">عرض المشروع</a></div>
-    <div class="proj"><h4>Kitabek Bayn Yadayk</h4><a href="#" class="link" data-lang="view_project">عرض المشروع</a></div>
+<section id="projects" class="section py-20 px-5">
+  <h3 class="text-3xl mb-8 text-center" data-lang="projects_heading">مشاريعي</h3>
+  <div class="projects-grid grid md:grid-cols-3 gap-8">
+    <div class="proj p-6 rounded-xl bg-white/5 text-center" data-proj="1">
+      <h4>Kora Website</h4>
+      <a href="#" class="link font-semibold text-teal-400 mt-2 inline-block" data-lang="view_project">عرض المشروع</a>
+    </div>
+    <div class="proj p-6 rounded-xl bg-white/5 text-center" data-proj="2">
+      <h4>Online Store</h4>
+      <a href="#" class="link font-semibold text-teal-400 mt-2 inline-block" data-lang="view_project">عرض المشروع</a>
+    </div>
+    <div class="proj p-6 rounded-xl bg-white/5 text-center" data-proj="3">
+      <h4>Kitabek Bayn Yadayk</h4>
+      <a href="#" class="link font-semibold text-teal-400 mt-2 inline-block" data-lang="view_project">عرض المشروع</a>
+    </div>
   </div>
 </section>
 
-<section id="contact" class="section alt">
-  <h3 data-lang="contact_heading">تواصل معي</h3>
-  <form class="form" action="#" method="POST">
-    <input type="text" name="name" required placeholder="الاسم" data-lang="name_label">
-    <input type="email" name="email" required placeholder="البريد الإلكتروني" data-lang="email_label">
-    <textarea name="message" rows="5" required placeholder="أخبرني عن مشروعك..." data-lang="msg_label"></textarea>
-    <button type="submit" data-lang="send_btn">إرسال</button>
+<section id="contact" class="section alt py-20 px-5 bg-white/5">
+  <h3 class="text-3xl mb-6 text-center" data-lang="contact_heading">تواصل معي</h3>
+  <form class="form max-w-lg mx-auto flex flex-col gap-5" action="#" method="POST">
+    <input type="text" name="name" required placeholder="الاسم" data-lang="name_label" class="px-4 py-3 rounded-lg border border-white/10 bg-transparent text-white focus:border-teal-400 focus:shadow-md">
+    <input type="email" name="email" required placeholder="البريد الإلكتروني" data-lang="email_label" class="px-4 py-3 rounded-lg border border-white/10 bg-transparent text-white focus:border-teal-400 focus:shadow-md">
+    <textarea name="message" rows="5" required placeholder="أخبرني عن مشروعك..." data-lang="msg_label" class="px-4 py-3 rounded-lg border border-white/10 bg-transparent text-white focus:border-teal-400 focus:shadow-md"></textarea>
+    <button type="submit" class="btn btn-primary py-3" data-lang="send_btn">إرسال</button>
   </form>
 </section>
 
-<footer>
-  <p>© <span id="year"></span> <span data-lang="footer_text">سوسن أحمد — مطوّرة واجهة أمامية</span></p>
+<footer class="text-center py-10 border-t border-white/5">
+  <p>© <span id="year"></span> <span data-lang="footer_text">المهندسة سوسن أحمد — مطوّرة واجهة أمامية</span></p>
 </footer>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-const langBtn = document.getElementById("langBtn");
-let currentLang = "ar";
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-const translations = {
-  ar:{name:"سوسن أحمد العجاب",title:"مطورة واجهة أمامية",nav_about:"نبذة",nav_skills:"مهارات",nav_projects:"مشاريع",nav_contact:"تواصل",hero_heading:"أبني واجهات نظيفة وسريعة وتجربة استخدام بسيطة.",hero_text:"متخصصة في HTML, CSS, JavaScript — أُبدع في تصميم صفحات هبوط وتطبيقات واجهة أمامية متجاوبة ومصمَّمة بعناية.",see_projects:"اطلع على مشاريعي",contact_me:"أرسل رسالة",about_heading:"نبذة عني",about_text:"طالبة تكنولوجيا معلومات ومطوّرة واجهة أمامية شغوفة ببناء واجهات مستخدم جذابة وفعّالة.",skills_heading:"مهاراتي التقنية",skill1:"HTML و CSS",skill2:"JavaScript",skill3:"Bootstrap و GitHub",projects_heading:"مشاريعي",view_project:"عرض المشروع",contact_heading:"تواصل معي",name_label:"الاسم",email_label:"البريد الإلكتروني",msg_label:"الرسالة",send_btn:"إرسال",footer_text:"سوسن أحمد — مطوّرة واجهة أمامية"},
-  en:{name:"Sawsan Ahmed Al-Ajab",title:"Front-End Developer",nav_about:"About",nav_skills:"Skills",nav_projects:"Projects",nav_contact:"Contact",hero_heading:"I build clean, fast interfaces with smooth user experiences.",hero_text:"Specialized in HTML, CSS, and JavaScript — crafting responsive, modern front-end applications and landing pages.",see_projects:"See My Projects",contact_me:"Contact Me",about_heading:"About Me",about_text:"IT student and front-end developer passionate about creating elegant, functional user interfaces.",skills_heading:"Technical Skills",skill1:"HTML & CSS",skill2:"JavaScript",skill3:"Bootstrap & GitHub",projects_heading:"Projects",view_project:"View Project",contact_heading:"Get In Touch",name_label:"Name",email_label:"Email",msg_label:"Message",send_btn:"Send",footer_text:"Sawsan Ahmed — Front-End Developer"},
-  de:{name:"Sawsan Ahmed Al-Ajab",title:"Front-End-Entwicklerin",nav_about:"Über mich",nav_skills:"Fähigkeiten",nav_projects:"Projekte",nav_contact:"Kontakt",hero_heading:"Ich entwickle saubere, schnelle Benutzeroberflächen mit einfacher Nutzererfahrung.",hero_text:"Spezialisiert auf HTML, CSS und JavaScript — ich gestalte responsive und moderne Weboberflächen und Landingpages.",see_projects:"Meine Projekte ansehen",contact_me:"Kontakt aufnehmen",about_heading:"Über mich",about_text:"IT-Studentin und Front-End-Entwicklerin mit Leidenschaft für funktionale, elegante Benutzeroberflächen.",skills_heading:"Technische Fähigkeiten",skill1:"HTML & CSS",skill2:"JavaScript",skill3:"Bootstrap & GitHub",projects_heading:"Projekte",view_project:"Projekt ansehen",contact_heading:"Kontakt",name_label:"Name",email_label:"E-Mail",msg_label:"Nachricht",send_btn:"Senden",footer_text:"Sawsan Ahmed — Front-End-Entwicklerin"}
-};
+<!-- ملف JS خارجي -->
+<script src="script.js"></script>
 
-langBtn.addEventListener("click", ()=>{
-  if(currentLang==="ar") currentLang="en";
-  else if(currentLang==="en") currentLang="de";
-  else currentLang="ar";
-  langBtn.textContent=currentLang==="ar"?"EN":currentLang==="en"?"DE":"AR";
-  document.documentElement.lang=currentLang;
-  document.documentElement.dir=currentLang==="ar"?"rtl":"ltr";
-  document.querySelectorAll("[data-lang]").forEach(el=>{
-    const key = el.getAttribute("data-lang");
-    if(translations[currentLang][key]) el.textContent = translations[currentLang][key];
-  });
-});
-</script>
 </body>
 </html>
