@@ -2,106 +2,171 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>سوسن — Front-End Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+    .hero {
+      background-color: #f3f4f6;
+    }
+    .btn-outline-primary {
+      border-width: 2px;
+    }
+  </style>
 </head>
-<body>
-  <header class="topbar">
+<body class="bg-white text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
     <div class="container">
-      <div class="brand">
-        <div class="logo">س</div>
-        <div>
-          <h1 data-lang="name">سوسن أحمد العجاب</h1>
-          <p class="muted" data-lang="title">مطورة واجهة أمامية</p>
+      <a class="navbar-brand fw-bold" href="#">سوسن</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">نبذة</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">مهارات</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">مشاريع</a></li>
+          <li class="nav-item"><a class="btn btn-primary ms-3" href="#contact">تواصل</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero py-20">
+    <div class="container mx-auto grid md:grid-cols-2 items-center gap-10">
+      <div data-aos="fade-right">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">أبني واجهات نظيفة وسريعة وتجربة استخدام بسيطة.</h1>
+        <p class="text-lg mb-6">متخصصة في HTML, CSS, JavaScript — أُبدع في تصميم صفحات هبوط وتطبيقات واجهة أمامية متجاوبة ومصمَّمة بعناية.</p>
+        <a href="#projects" class="btn btn-primary me-3">مشاريعي</a>
+        <a href="#contact" class="btn btn-outline-primary">تواصل</a>
+      </div>
+      <div data-aos="fade-left">
+        <img src="hero-image.png" alt="Sawsan Front-End" class="rounded shadow-lg w-full">
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-white">
+    <div class="container text-center">
+      <h2 class="text-3xl font-bold mb-4">نبذة عني</h2>
+      <p class="text-lg text-gray-600">طالبة تكنولوجيا معلومات ومطوّرة واجهة أمامية شغوفة ببناء واجهات مستخدم جذابة وفعّالة.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 bg-gray-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold mb-6 text-center">مهاراتي التقنية</h2>
+      <div class="mb-4">
+        <label>HTML & CSS</label>
+        <div class="progress">
+          <div class="progress-bar bg-primary" style="width: 95%"></div>
         </div>
       </div>
-      <nav class="nav">
-        <a href="#about" data-lang="nav_about">نبذة</a>
-        <a href="#skills" data-lang="nav_skills">مهارات</a>
-        <a href="#projects" data-lang="nav_projects">مشاريع</a>
-        <a href="#contact" class="cta" data-lang="nav_contact">تواصل</a>
-        <button id="langBtn" class="lang-btn">EN</button>
-      </nav>
+      <div class="mb-4">
+        <label>JavaScript</label>
+        <div class="progress">
+          <div class="progress-bar bg-success" style="width: 85%"></div>
+        </div>
+      </div>
+      <div class="mb-4">
+        <label>Bootstrap & GitHub</label>
+        <div class="progress">
+          <div class="progress-bar bg-info" style="width: 90%"></div>
+        </div>
+      </div>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <h2 data-lang="hero_heading">أبني واجهات نظيفة وسريعة وتجربة استخدام بسيطة.</h2>
-          <p class="lead" data-lang="hero_text">متخصصة في HTML, CSS, JavaScript — أُبدع في تصميم صفحات هبوط وتطبيقات واجهة أمامية متجاوبة ومصمَّمة بعناية.</p>
-          <div class="actions">
-            <a href="#projects" class="btn" data-lang="see_projects">اطلع على مشاريعي</a>
-            <a href="#contact" class="btn ghost" data-lang="contact_me">أرسل رسالة</a>
+  <!-- Projects Section -->
+  <section id="projects" class="py-16 bg-white">
+    <div class="container">
+      <h2 class="text-3xl font-bold mb-8 text-center">مشاريعي</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm" data-aos="zoom-in">
+            <div class="card-body">
+              <h5 class="card-title">Kora Website</h5>
+              <a href="https://sawsanalajab6-png.github.io/kora-site/" target="_blank" class="btn btn-outline-primary mt-2">عرض المشروع</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card-body">
+              <h5 class="card-title">Online Store</h5>
+              <a href="https://sawsanalajab6-png.github.io/Electronics-store/" target="_blank" class="btn btn-outline-primary mt-2">عرض المشروع</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card-body">
+              <h5 class="card-title">Book Website</h5>
+              <a href="https://sawsanalajab6-png.github.io/book-web/" target="_blank" class="btn btn-outline-primary mt-2">عرض المشروع</a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="about" class="section container">
-      <h3 data-lang="about_heading">نبذة عني</h3>
-      <p style="text-align:center" data-lang="about_text">طالبة تكنولوجيا معلومات ومطوّرة واجهة أمامية شغوفة ببناء واجهات مستخدم جذابة وفعّالة.</p>
-    </section>
-
-    <section id="skills" class="section alt">
-      <div class="container">
-        <h3 data-lang="skills_heading">مهاراتي التقنية</h3>
-        <ul class="skills-list">
-          <li data-lang="skill1">HTML و CSS</li>
-          <li data-lang="skill2">JavaScript</li>
-          <li data-lang="skill3">Bootstrap و GitHub</li>
-        </ul>
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gray-50">
+    <div class="container">
+      <h2 class="text-3xl font-bold mb-6 text-center">تواصل معي</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <form class="card p-4 shadow" action="https://formspree.io/f/movkyewk" method="POST">
+            <div class="mb-3">
+              <label class="form-label">الاسم</label>
+              <input type="text" name="name" class="form-control" required placeholder="اسمك">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">البريد الإلكتروني</label>
+              <input type="email" name="email" class="form-control" required placeholder="name@example.com">
+            </div>
+            <div class="mb-3">
+              <label class="form-label">الرسالة</label>
+              <textarea name="message" class="form-control" rows="5" required placeholder="أخبرني عن مشروعك..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">إرسال</button>
+          </form>
+        </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="projects" class="section container">
-      <h3 data-lang="projects_heading">مشاريعي</h3>
-      <div class="projects-grid">
-        <article class="proj">
-          <h4>Kora Website</h4>
-          <a href="https://sawsanalajab8-hue.github.io/kora-site/" target="_blank" class="link" data-lang="view_project">عرض المشروع</a>
-        </article>
-        <article class="proj">
-          <h4>Online Store</h4>
-          <a href="https://sawsanalajab8-hue.github.io/Online-store-website/" target="_blank" class="link" data-lang="view_project">عرض المشروع</a>
-        </article>
-        <article class="proj">
-          <h4>Kitabek Bayn Yadayk</h4>
-          <a href="https://sawsanalajab8-hue.github.io/books/" target="_blank" class="link" data-lang="view_project">عرض المشروع</a>
-        </article>
-      </div>
-    </section>
-
-    <section id="contact" class="section alt">
-      <div class="container">
-        <h3 data-lang="contact_heading">تواصل معي</h3>
-<form id="contactForm" class="card form" action="https://formspree.io/f/movkyewk" method="POST">
-  <label data-lang="name_label">الاسم
-    <input type="text" name="name" required placeholder="اسمك">
-  </label>
-
-  <label data-lang="email_label">البريد الإلكتروني
-    <input type="email" name="email" required placeholder="name@example.com">
-  </label>
-
-  <label data-lang="msg_label">الرسالة
-    <textarea name="message" rows="5" required placeholder="أخبرني عن مشروعك..."></textarea>
-  </label>
-
-  <button type="submit" class="btn" data-lang="send_btn">إرسال</button>
-</form>
-
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <p>© <span id="year"></span> <span data-lang="footer_text">سوسن أحمد — مطوّرة واجهة أمامية</span></p>
+  <!-- Footer -->
+  <footer class="py-6 bg-white text-center shadow-inner mt-4">
+    <p>© <span id="year"></span> سوسن أحمد — مطوّرة واجهة أمامية</p>
   </footer>
 
-  <script src="script.js"></script>
+  <!-- Scripts -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    AOS.init({ duration: 1000 });
+  </script>
+
 </body>
 </html>
